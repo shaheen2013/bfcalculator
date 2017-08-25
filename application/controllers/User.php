@@ -47,7 +47,7 @@ class User extends CI_Controller {
             } else {
 
             	echo 'NOT OK';
-            	
+
             }
 
     	} else {
@@ -64,6 +64,13 @@ class User extends CI_Controller {
     function login() {
 
     	$data['_view'] = 'user/login';
+        $this->load->view('layouts/main',$data);
+
+    }
+
+    function confirmation() {
+
+    	$data['_view'] = 'user/confirmation';
         $this->load->view('layouts/main',$data);
 
     }
