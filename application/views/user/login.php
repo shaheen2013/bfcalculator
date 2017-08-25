@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 ?>
 
-<?php echo form_open('user/login',array("class"=>"form-horizontal")); ?>
+<?php echo form_open('user/login',array("class"=>"form-horizontal", "method"=>"post")); ?>
 <div class="col-sm-offset-4 col-sm-4">
 	<br>
 	<h4 class="page-heading">LOGIN to BF CALCULATOR</h4>

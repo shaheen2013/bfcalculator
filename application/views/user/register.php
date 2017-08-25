@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 ?>
 
-<?php echo form_open('user/register',array("class"=>"form-horizontal")); ?>
+<?php echo form_open('user/register',array("class"=>"form-horizontal", "method"=>"post")); ?>
 <div class="col-sm-offset-4 col-sm-4">
 	<br>
 	<h4 class="page-heading">REGISTER to BF CALCULATOR</h4>
@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 	</div>
 	<div class="form-group">
-		<label for="name" class="col-md-4">Name</label>
+		<label for="name" class="col-md-4">Full Name</label>
 		<div class="col-md-8">
 			<input type="text" name="name" value="<?php echo $this->input->post('name'); ?>" class="form-control" id="name" />
 		</div>
@@ -42,7 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="form-group">
 		<label for="sex" class="col-md-4">Sex</label>
 		<div class="col-md-8">
-			<input type="text" name="sex" value="<?php echo $this->input->post('sex'); ?>" class="form-control" id="sex" />
+			<input type="radio" name="sex" value="M" />&nbsp;&nbsp;<b>MALE</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="sex" value="F" />&nbsp;&nbsp;<b>FEMALE</b>
 		</div>
 	</div>
 	<div class="form-group">

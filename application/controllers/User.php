@@ -25,9 +25,25 @@ class User extends CI_Controller {
 
     public function register() {
 
-    	
-    	$data['_view'] = 'user/register';
-        $this->load->view('layouts/main',$data);
+    	if(isset($_POST) && count($_POST) > 0) {
+
+    		$userParams = array(
+    			'email' => $this->input->post('email'),
+                'name' => $this->input->post('name'),
+                'password' => $this->input->post('password'),
+                'age' => $this->input->post('age'),
+                'sex' => $this->input->post('sex'),
+                'weight' => $this->input->post('weight'),
+                'height' => $this->input->post('height'),
+                'fitness' => $this->input->post('fitness')
+            );
+
+    	} else {
+
+    		$data['_view'] = 'user/register';
+        	$this->load->view('layouts/main',$data);
+
+    	}
 
     }
 
