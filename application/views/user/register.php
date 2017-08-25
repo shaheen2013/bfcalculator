@@ -12,6 +12,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <?php echo form_open('user/register',array("class"=>"form-horizontal")); ?>
 <div class="col-sm-offset-4 col-sm-4">
+	<br>
+	<h4 class="page-heading">REGISTER to BF CALCULATOR</h4>
+	<br>
 	<div class="form-group">
 		<label for="email" class="col-md-4">Email</label>
 		<div class="col-md-8">
@@ -63,7 +66,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	
 	<div class="form-group">
 		<div class="col-sm-offset-4 col-sm-8">
-			<button type="submit" class="btn btn-success">Confirm To Register</button>
+			<button type="submit" class="btn btn-primary">REGISTER</button>
         </div>
 	</div>
 </div>

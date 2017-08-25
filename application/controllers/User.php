@@ -33,6 +33,8 @@ class User extends CI_Controller {
 
     function login() {
 
+    	$data['_view'] = 'user/login';
+        $this->load->view('layouts/main',$data);
 
     }
 	

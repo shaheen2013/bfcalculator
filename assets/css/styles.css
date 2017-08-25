@@ -1,0 +1,22 @@
+/***
+*
+* ADDING CUSTOM CSS RULES TO STYLE
+*
+***/
+::selection { background-color: #E13300; color: white; }
+::-moz-selection { background-color: #E13300; color: white; }
+
+html {
+
+	width: 99%;
+	padding: 0px 20px 0px 30px;
+	align-content: center;
+
+}
+
+h4.page-heading {
+
+	color: #808000;
+	text-align: center;
+
+}

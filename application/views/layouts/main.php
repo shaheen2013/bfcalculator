@@ -20,6 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	    <!-- CSS styles -->
 	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	    <?= link_tag(base_url('assets/css/styles.css?v=' . time())); ?>
 
 	    <!-- JS Libs -->
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js" type="text/javascript"></script>
