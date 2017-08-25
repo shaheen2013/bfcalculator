@@ -1,6 +1,15 @@
 <?php
 
-class User_model {
+/*****
+*
+* @Author: Nasid Kamal.
+*
+*****/
+
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class User_model extends CI_Model {
+
 	function __construct()
     {
         parent::__construct();
@@ -71,4 +80,7 @@ class User_model {
     {
         return $this->db->delete('users',array('id'=>$id));
     }
+    
 }
+
+?>
