@@ -42,17 +42,26 @@ class User extends CI_Controller {
 
             if($user == null) {
 
-            	echo 'OK';
+            	$uid = $this->User_model->add_user($userParams);
+
+            	if($uid > 0) {
+
+            		$this->confirmation();
+
+            		//redirect('user/confirmation');
+            	}
 
             } else {
 
-            	echo 'NOT OK';
+            	$data['errorMessage'] = 'Sorry, Your Email Is Already Registered...!';
+            	$data['_view'] = 'user/register';
+        		$this->load->view('layouts/main',$data);
 
             }
 
     	} else {
 
-    		$data['errorMessage'] = 'Sorry, Your Email Is Already Registered...!';
+    		//$data['errorMessage'] = 'Sorry, Your Email Is Already Registered...!';
 
     		$data['_view'] = 'user/register';
         	$this->load->view('layouts/main',$data);
@@ -68,7 +77,7 @@ class User extends CI_Controller {
 
     }
 
-    function confirmation() {
+    private function confirmation() {
 
     	$data['_view'] = 'user/confirmation';
         $this->load->view('layouts/main',$data);

@@ -35,7 +35,7 @@ class User_model extends CI_Model {
     }
 
     /*
-     * Get user by id
+     * Get user by email
      */
     function get_user_by_email($email)
     {
@@ -49,6 +49,25 @@ class User_model extends CI_Model {
             WHERE
                 `email` = ?
         ",array($email))->row_array();
+
+        return $user;
+    }
+
+    /*
+     * Get user by id
+     */
+    function authenticate_user($email, $password)
+    {
+        $user = $this->db->query("
+            SELECT
+                *
+
+            FROM
+                `users`
+
+            WHERE
+                `email` = ? AND `password` = ?
+        ",array($email, $password))->row_array();
 
         return $user;
     }
