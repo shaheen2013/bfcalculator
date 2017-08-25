@@ -74,7 +74,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="form-group">
 		<label for="fitness" class="col-md-4">Fitness</label>
 		<div class="col-md-8">
-			<input type="text" name="fitness" value="<?php echo $this->input->post('fitness'); ?>" class="form-control" id="fitness" />
+			<select name="fitness" value="<?php echo $this->input->post('fitness'); ?>" class="form-control" id="fitness">
+				<option value="0">SELECT SCALE</option>
+				<option value="1">FITNESS SCALE 1</option>
+				<option value="2">FITNESS SCALE 2</option>
+				<option value="3">FITNESS SCALE 3</option>
+				<option value="4">FITNESS SCALE 4</option>
+				<option value="4">FITNESS SCALE 5</option>
+			</select>
 		</div>
 	</div>
 	<br>
@@ -83,6 +90,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<button type="submit" class="btn btn-primary">REGISTER</button>
         </div>
 	</div>
+	<hr>
+	<b>Already have an account?</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?= base_url('/user/login') ?>"><b>GO TO LOGIN PAGE</b></a>
 </div>
 
 <?php echo form_close(); ?>

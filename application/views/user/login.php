@@ -47,6 +47,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<button type="submit" class="btn btn-success">LOG IN</button>
         </div>
 	</div>
+	<hr>
+	<b>Don't have an account?</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?= base_url('/user/register') ?>"><b>CREATE AN ACCOUNT</b></a>
 </div>
 
 <?php echo form_close(); ?>

@@ -19,7 +19,7 @@ class User extends CI_Controller {
 
     function index() {
 
-    	redirect('user/register');
+    	redirect('user/login');
 
     }
 
@@ -35,7 +35,7 @@ class User extends CI_Controller {
                 'sex' => $this->input->post('sex'),
                 'weight' => $this->input->post('weight'),
                 'height' => $this->input->post('height'),
-                'fitness' => $this->input->post('fitness')
+                'fitness' => (int)$this->input->post('fitness')
             );
 
             $user = $this->User_model->get_user_by_email($userParams['email']);
@@ -72,8 +72,34 @@ class User extends CI_Controller {
 
     function login() {
 
-    	$data['_view'] = 'user/login';
-        $this->load->view('layouts/main',$data);
+    	if(isset($_POST) && count($_POST) > 0) {
+
+    		$email = $this->input->post('email');
+			$password = $this->input->post('password');
+
+			$user = $this->User_model->authenticate_user($email, $password);
+
+			if($user != null) {
+
+				echo 'Successful';
+				
+
+			} else {
+
+				$data['errorMessage'] = 'Sorry, Email and Password did not match...!';
+            	$data['_view'] = 'user/login';
+        		$this->load->view('layouts/main',$data);
+
+			}
+
+    	} else {
+
+    		$data['_view'] = 'user/login';
+        	$this->load->view('layouts/main',$data);
+
+
+    	}
+
 
     }
 
