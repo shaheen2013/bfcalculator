@@ -116,9 +116,9 @@ class User extends CI_Controller {
 
             $fp_email = $this->input->post('fp_email');
 
-            echo $fp_email;
+            //echo $fp_email;
 
-            //$this->send_password_reset_link($fp_email);
+            $this->send_password_reset_link($fp_email);
 
 
         } else {
@@ -134,14 +134,41 @@ class User extends CI_Controller {
 
         //$this->send_email($eDtata);
 
+        $data['email'] = $email;
 
-    }
-
-    private function send_email($eData) {
-
-
+        $data['_view'] = 'user/email_sent';
+        $this->load->view('layouts/main',$data);
 
 
     }
+
+    private function sendEmail($toEmail, $message) {
+
+            $config = array(
+                'protocol' => 'smtp',
+                'smtp_host' => 'ssl://smtp.googlemail.com',
+                'smtp_port' => '465',
+                'smtp_user' => '',
+                'smtp_pass' => '',
+                'mailtype' => 'html',
+                'charset' => 'iso-8859-1',
+                'wordwrap' => true
+            );
+
+            $this->load->library('email', $config);
+            $this->email->from('noreply@bfcalculator.com', 'BF CALCULATOR Admin');
+            $this->email->to($toEmail);
+            $this->email->subject('BF CALCULATOR: Reset Password');
+            $this->email->message($message);
+            $this->email->set_newline("\r\n");
+            
+            if($this->email->send()) {
+                return true;
+            } else {
+                return false
+            }
+
+        }
+        
 	
 }
