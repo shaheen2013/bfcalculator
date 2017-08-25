@@ -38,7 +38,21 @@ class User extends CI_Controller {
                 'fitness' => $this->input->post('fitness')
             );
 
+            $user = $this->User_model->get_user_by_email($userParams['email']);
+
+            if($user == null) {
+
+            	echo 'OK';
+
+            } else {
+
+            	echo 'NOT OK';
+            	
+            }
+
     	} else {
+
+    		$data['errorMessage'] = 'Sorry, Your Email Is Already Registered...!';
 
     		$data['_view'] = 'user/register';
         	$this->load->view('layouts/main',$data);

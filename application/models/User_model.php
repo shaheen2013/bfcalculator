@@ -33,6 +33,25 @@ class User_model extends CI_Model {
 
         return $user;
     }
+
+    /*
+     * Get user by id
+     */
+    function get_user_by_email($email)
+    {
+        $user = $this->db->query("
+            SELECT
+                *
+
+            FROM
+                `users`
+
+            WHERE
+                `email` = ?
+        ",array($email))->row_array();
+
+        return $user;
+    }
         
     /*
      * Get all users

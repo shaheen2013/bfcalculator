@@ -14,9 +14,16 @@ html {
 
 }
 
-h4.page-heading {
+h3.page-heading {
 
 	color: #808000;
+	text-align: center;
+
+}
+
+h5.error-message {
+
+	color: #DC143C;
 	text-align: center;
 
 }
