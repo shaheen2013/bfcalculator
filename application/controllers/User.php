@@ -112,7 +112,36 @@ class User extends CI_Controller {
 
     function forgot_password() {
 
-        echo 'ok';
+        if(isset($_POST) && count($_POST) > 0) {
+
+            $fp_email = $this->input->post('fp_email');
+
+            echo $fp_email;
+
+            //$this->send_password_reset_link($fp_email);
+
+
+        } else {
+
+            $data['_view'] = 'user/forgot_password';
+            $this->load->view('layouts/main',$data);
+
+        }
+
+    }
+
+    private function send_password_reset_link($email) {
+
+        //$this->send_email($eDtata);
+
+
+    }
+
+    private function send_email($eData) {
+
+
+
+
     }
 	
 }
