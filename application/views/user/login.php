@@ -44,7 +44,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<br>
 	<div class="form-group">
 		<div class="col-sm-offset-4 col-sm-8">
-			<button type="submit" class="btn btn-success">LOG IN</button>
+			<button type="submit" class="btn btn-success">LOG IN</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?= base_url('/user/forgot_password') ?>">Forgot Password?</a>
         </div>
 	</div>
 	<hr>

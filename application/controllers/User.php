@@ -109,5 +109,10 @@ class User extends CI_Controller {
         $this->load->view('layouts/main',$data);
 
     }
+
+    function forgot_password() {
+
+        echo 'ok';
+    }
 	
 }
